@@ -1,3 +1,7 @@
+# to-do-rails
+
+Introduction to Rails by building a To-do App
+
 # README
 
 This README would normally document whatever steps are necessary to get the
