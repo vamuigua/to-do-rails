@@ -40,6 +40,13 @@ class ListsController < ApplicationController
       end
     end
 
+    #destroy controller action
+    def destroy
+      @list = List.find(params[:id])
+      @list.destroy
+      redirect_to lists_path
+    end
+
    #The private method used by strong parameters,
    #permit only designated params to be passed for our model
    #used by create and update actions
