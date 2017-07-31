@@ -30,10 +30,21 @@ class ListsController < ApplicationController
       render :edit
     end
 
+    #action to update the particular list according to its id
+    def update
+      @list= List.find(params[:id])
+      if @list.update(list_params)
+        redirect_to lists_path
+      else
+        render :edit
+      end
+    end
+
    #The private method used by strong parameters,
    #permit only designated params to be passed for our model
-  private
-    def list_params
+   #used by create and update actions
+  	private
+     def list_params
       params.require(:list).permit(:name)
-    end
+     end
 end
