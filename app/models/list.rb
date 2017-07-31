@@ -1,3 +1,4 @@
 class List < ActiveRecord::Base
-  validates :name, :presence => true
+	has_many :tasks
+	validates :name, :presence => true
 end
