@@ -9,9 +9,25 @@ class ListsController < ApplicationController
       @list = List.find(params[:id])
       render :show
     end
-   #action to create a new list
+   #action to render a new list form
    def new
       @list = List.new
       render :new
-    end 
+    end
+    #action to create a new list
+   def create
+      @list = List.new(list_params)
+      if @list.save
+        redirect_to  lists_path
+      else
+        render :new
+      end
+    end
+
+   #The private method used by strong parameters,
+   #permit only designated params to be passed for our model
+  private
+    def list_params
+      params.require(:list).permit(:name)
+    end
 end
