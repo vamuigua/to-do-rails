@@ -24,6 +24,12 @@ class ListsController < ApplicationController
       end
     end
 
+    #controller action to handle the edit page
+    def edit
+      @list = List.find(params[:id])
+      render :edit
+    end
+
    #The private method used by strong parameters,
    #permit only designated params to be passed for our model
   private
