@@ -22,7 +22,6 @@ class TasksController < ApplicationController
     def edit
       @list = List.find(params[:list_id])
       @task = Task.find(params[:id])
-      render :edit
     end
 
     #action to update the particular task according to its id
