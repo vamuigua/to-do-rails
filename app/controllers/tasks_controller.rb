@@ -14,6 +14,7 @@ class TasksController < ApplicationController
         redirect_to list_path(@task.list)
       else
         render :new
+        flash[:alert] = "ERROR :("
       end
     end
 
@@ -33,6 +34,7 @@ class TasksController < ApplicationController
         redirect_to list_path(@list)
       else
         render :edit
+        flash[:alert] = "ERROR :("
       end
     end
 
