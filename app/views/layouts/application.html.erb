@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>ToDo|RAILS</title>
+		<title><%= yield(:title) %></title>
 		<%= csrf_meta_tags %>
 		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -11,10 +11,13 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
 		<!--Let browser know website is optimized for mobile-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<!-- Custom CSS -->
-		<link rel="stylesheet" href="/css/styles.css">
 	</head>
 	<body>
+
+		<!--Flash message-->
+		<%= flash[:alert] %>
+		<%= flash[:notice] %>
+
 		<%= yield %>
 		<!--Import jQuery before materialize.js-->
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
