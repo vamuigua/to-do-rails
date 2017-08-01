@@ -1,3 +1,4 @@
+<% content_for(:title, "List | To Do") %>
 <div class="tasks-list">
 	<h1><%= @list.name %></h1>
 	<% if @list.tasks.any? %>
@@ -28,6 +29,7 @@
 	<p>There are no tasks yet!</p>
 	<% end %>
 	<p><%= link_to "Add a task", new_list_task_path(@list) %></p>
+	<p><%= link_to "Edit List", edit_list_path(@list) %></p>
 	<p><%= link_to "Delete List", list_path(@list),
 		:data => {:confirm => "Are you sure?",
 	:method => "delete"} %></p>
